@@ -22,3 +22,5 @@ migrations/
 *.flv
 *.mov
 *.wmv
+
+.sqlite3
