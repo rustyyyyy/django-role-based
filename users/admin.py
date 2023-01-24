@@ -1,11 +1,9 @@
 from django.contrib import admin
-
-from .models import CustomUser, location
 from django.contrib.auth.admin import UserAdmin
-
 from django.contrib.auth.models import Group
 
-from .forms import CustomUserCreationForm, CustomUserChangeForm
+from .forms import CustomUserChangeForm, CustomUserCreationForm
+from .models import CustomUser, location
 
 admin.site.unregister(Group)
 
