@@ -22,7 +22,7 @@ class Property(models.Model):
 
     class Meta:
         verbose_name = 'Property'
-        verbose_name_plural = 'Properties'
+        verbose_name_plural = 'Property'
 
     def __str__(self):
         return str(self.user.email)
