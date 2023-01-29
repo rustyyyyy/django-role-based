@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Add Owner</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container mt-5">
+        {% include "partials/nav.html" %}
+        <div class="row mt-5">
+            <div class="col-md-6">
+                <h4>Add Owner</h4>
+                {{form.as_p}}
+                <!-- <form class="mt-4" method="post">
+                    <div class="form-group">
+                        <label>First Name:</label>
+                        <input type="text" class="form-control" name="first_name">
+                    </div>
+                    <div class="form-group">
+                        <label>Last Name:</label>
+                        <input type="text" class="form-control" name="last_name">
+                    </div>
+                    <div class="form-group">
+                        <label>Phone:</label>
+                        <input type="number" class="form-control" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label>Email address:</label>
+                        <input type="email" class="form-control" name="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="pwd">Password:</label>
+                        <input type="password" class="form-control" name="password">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form> -->
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

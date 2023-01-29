@@ -1,5 +1,5 @@
 from django.contrib.auth.forms import UserChangeForm, UserCreationForm
-
+from django import forms
 from .models import CustomUser
 
 
@@ -17,3 +17,11 @@ class CustomUserChangeForm(UserChangeForm):
         fields = (
             "email",
         )
+
+
+class OwnerCreationForm(forms.Form):
+    first_name = forms.CharField()
+    last_name = forms.CharField()
+    phone = forms.NumberInput()
+    email = forms.EmailField()
+    password = forms.PasswordInput()

@@ -2,11 +2,9 @@ from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import redirect, render
 from django.views import View
 
-from .permissions import LoginRequiredMixin
-
+from .permissions import LoginRequiredMixin, AdminRequired
+from .forms import OwnerCreationForm
 # Create your views here.
-
-
 
 
 class Login(View):
@@ -16,7 +14,9 @@ class Login(View):
 
     def post(self, request):
         try:
-            user = authenticate(username=request.POST['email'], password=request.POST['password'])
+            user = authenticate(
+                username=request.POST["email"], password=request.POST["password"]
+            )
             if user is not None:
                 login(request, user)
                 return redirect("dashboard")
@@ -27,4 +27,15 @@ class Login(View):
 
 class Dashboard(LoginRequiredMixin, View):
     def get(self, request):
+        user = request.user
+        
+        if user.role.name == "admin":
+            return render(request, "admin/index.html")
+
         return render(request, "home/index.html")
+
+
+class OwnerView(AdminRequired, View):
+    def get(self, request):
+        form = OwnerCreationForm()
+        return render(request, "admin/add_owner.html", {"form": form})

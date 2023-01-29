@@ -17,12 +17,16 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import include, path
+from django.views.generic.base import RedirectView
+
+
 
 urlpatterns = [
     path("super-admin/", admin.site.urls),
+    path("", RedirectView.as_view(url='super-admin'), name='default'),
 ]
 
-urlpatterns += [path("admin/", include("users.urls"))]
+# urlpatterns += [path("admin/", include("users.urls"))]
 
 # MEDIA_URL
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
