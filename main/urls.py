@@ -26,7 +26,7 @@ urlpatterns = [
     path("", RedirectView.as_view(url='super-admin'), name='default'),
 ]
 
-# urlpatterns += [path("admin/", include("users.urls"))]
+urlpatterns += [path("admin/", include("users.urls"))]
 
 # MEDIA_URL
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
