@@ -23,4 +23,4 @@ migrations/
 *.mov
 *.wmv
 
-.sqlite3
+db.sqlite3
